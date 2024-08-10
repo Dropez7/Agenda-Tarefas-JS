@@ -1,0 +1,31 @@
+<% if (errors.length > 0) { %> <!-- Se houver erros, esse cara vem la do midware global -->
+
+<div class="row">
+    <div class="col my-3">
+        <div class="alert alert-danger">
+            <% errors.forEach(error => { %>
+            <!-- Exibo todos os erros -->
+            <div><%= error %></div><br>
+
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<% } %>
+
+<% if (success.length > 0) { %> <!-- Se houver erros, esse cara vem la do midware global -->
+
+    <div class="row">
+        <div class="col my-3">
+            <div class="alert alert-success">
+                <% success.forEach(success => { %>
+                <!-- Exibo todos as mensagens boas -->
+                <div><%= success %></div><br>
+    
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    
+    <% } %>

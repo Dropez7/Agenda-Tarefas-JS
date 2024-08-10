@@ -1,19 +1,62 @@
 <%- include('includes/head'); %>
-<section class="container">
-
-    <h1>
-
-        <form action="/" method="POST">
-            <!-- Csrf -->
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>"> 
-            <label> Cliente </label>
-            <input type="text" name="cliente" id="cliente">
-            <button>Submit</button>
-        </form>
-
-    </h1>
 
 
-</section>
+<div class="container d-flex justify-content-center">
 
+    <section class="container-section">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="display-4 text-center">Agenda</div>
+                <div class="lead text-center">Seus contatos estão abaixo</div>
+            </div>
+        </div>
+
+        <div class="row my-2">
+            <div class="col">
+                <div class="alert alert-danger">Um erro ai</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+
+                <div class="responsive-table ">
+                    <table class="table my-3 ">
+                        <tr>
+                            <td>Pedro</td>
+                            <td>Henrique</td>
+                            <td>(21) 97593-6401</td>
+                            <td>pedro24253567@gmail.com</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <# for (let i = 0; i < contacts.length; i++) { %>
+                            <tr>
+                                <td><%# contacts[i].name %></td>
+                                <td><%# contacts[i].phone %></td>
+                                <td><%# contacts[i].email %></td>
+                            </tr>
+                        <# } %>
+                    </tbody>
+                </table>
+            </div>
+        </div> -->
+
+    </section>
+</div>
 <%- include('includes/footer'); %>

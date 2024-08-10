@@ -26,25 +26,53 @@ const sessionsOptions = session({
 });
 
 const flash = require("connect-flash");
-const routes = require("./routes");
-const path = require("path");
-const helmet = require("helmet");
-const csrf = require("csurf");
-const { middlewareGlobal, checkCsrtError, csrfMiddleware } = require("./src/middlewares/middleware");    
 
-app.use(middlewareGlobal);
-app.use(checkCsrtError);
-app.use(csrfMiddleware);
+// const helmet = require("helmet");
+// app.use(helmet()); 
+
+// Como dito no curso, o helmet tava me dando problema, vi que poderia configurar da seguinte forma:
+
+// const helmet = require('helmet');
+
+// app.use(helmet({
+//   contentSecurityPolicy: {
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: ["'self'", "https://code.jquery.com", "https://cdn.jsdelivr.net"],
+//       styleSrc: ["'self'", "https://cdn.jsdelivr.net"],
+//       // Outras diretivas podem ser ajustadas aqui conforme necessário
+//     },
+//   },
+//   // Outros ajustes de segurança
+// }));
+
+// mas era mt trampo e como todos os dados aqui são ficticios, preferi deixar sem, mais por simplicidade 
+
+
+
+
+const csrf = require("csurf");
+
+const path = require("path");
+
+const routes = require("./routes");
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "public")));
 app.use(flash()); 
-app.use(helmet()); 
+app.use(sessionsOptions); // Tem q ficar acima do csrf, pq o csrf usa a session
 app.use(csrf());
-app.use(sessionsOptions);
+
+const { middlewareGlobal, checkCsrtError, csrfMiddleware } = require("./src/middlewares/middleware");    
+
+app.use(middlewareGlobal);
+app.use(csrfMiddleware);
+app.use(checkCsrtError);
+
+app.use(routes);
 app.set("views", path.resolve(__dirname, "src", "views"));
 app.set("view engine", "ejs");
-app.use(routes);
 
 app.on("pronto", () => {
     app.listen(3000, () => {

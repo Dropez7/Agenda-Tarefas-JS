@@ -1,0 +1,65 @@
+<%- include('includes/head'); %>
+
+
+<div class="container d-flex justify-content-center">
+
+    <section class="container-section">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="display-4 text-center">Criar conta ou Entrar</div>
+                <div class="lead text-center">Faça login ou crie sua conta abaixo</div>
+            </div>
+        </div>
+        <!-- 
+        <div class="row my-2">
+            <div class="col">
+                <div class="alert alert-danger">Um erro ai</div>
+            </div>
+        </div> -->
+
+        <div class="row mt-5 text-left">
+            <div class="col-lg-6">
+                <h4>Faça seu Cadastro</h4>
+
+
+                <form action="/login/register" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                    <div class="form-group">
+
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+
+                        <label for="password">Sua Senha</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Cadastrar</button>
+                </form>
+
+            </div>
+
+            <div class="col-lg-6">
+                <h4>Fazer Login</h4>
+                <form action="/login/login" method="POST">
+
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                    <div class="form-group">
+
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+
+                        <label for="password">Sua Senha</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Entrar</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</div>
+<%- include('includes/footer'); %>

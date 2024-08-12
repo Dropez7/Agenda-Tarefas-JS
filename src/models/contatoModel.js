@@ -79,10 +79,24 @@ Contato.prototype.cleanUp = function () {
         nome: this.body.nome,
         sobrenome: this.body.sobrenome,
         email: this.body.email,
-        password: this.body.password
+        telefone: this.body.telefone
     };
 
 }
+
+Contato.prototype.edit = async function(id){
+
+    if(typeof id !== 'string') return
+
+    this.valida()
+    
+    if (this.errors.length > 0) return;
+
+    // Atualiza de acordo com o id, e o new é pra falar que eu quero que me retorne o contato atualizado
+    this.contato = await contatoModel.findByIdAndUpdate(id, this.body, { new: true });
+
+}
+
 
 // static
 Contato.buscaPorId = async function(id){
@@ -92,5 +106,23 @@ Contato.buscaPorId = async function(id){
     const contato = await contatoModel.findById(id);
     return contato
 }
+
+// static
+Contato.buscaContatos = async function(){
+    const contatos = await contatoModel.find().sort( { criadoEm: -1 }); // Pega tudo mas poderia fazer .find({ email: tal })
+    // .sort é o orderby, 1 é ordem crescente e -1 é ordem decrescente
+
+    return contatos
+}
+
+// static
+Contato.delete = async function(id){
+
+    if(typeof id !== 'string') return; 
+
+    const contato = await contatoModel.findOneAndDelete( { id: id}); // Tem q passar um objeto
+    return contato
+}
+
 
 module.exports = Contato;

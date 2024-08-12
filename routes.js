@@ -16,7 +16,9 @@ router.get('/login/logout', loginController.logout);
 
 // Rotas de Contato
 router.get('/contato/index', loginRequired, contatoController.index); // Adicionando o middleware q so faz entrar se tiver logado
-router.post('/contato/register', contatoController.register);
-router.get('/contato/index/:id', contatoController.editIndex);
+router.post('/contato/register', loginRequired, contatoController.register);
+router.get('/contato/index/:id', loginRequired, contatoController.editIndex);
+router.post('/contato/edit/:id', loginRequired, contatoController.edit);
+router.get('/contato/delete/:id', loginRequired, contatoController.delete);
 
 module.exports = router;

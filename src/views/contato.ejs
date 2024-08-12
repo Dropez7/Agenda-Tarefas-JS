@@ -17,7 +17,13 @@
         <div class="row mt-5 text-left justify-content-center">
             <div class="col-lg-6">
 
-                <form action="/contato/register" method="POST">
+                <!-- Se há um id, ou seja, se essa é uma tela de edição -->
+                <% if(!contato._id) { %> 
+                    <form action="/contato/register" method="POST">
+                <% } else { %>
+                    <form action="/contato/edit/<%= contato._id %>" method="POST">
+                <% } %>
+
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
                     <div class="form-group">

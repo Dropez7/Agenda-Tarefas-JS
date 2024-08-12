@@ -31,7 +31,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 
 .container-section {
     margin-top: 120px !important;
-    text-align: center;
     /* background-color: #343957;*/
     background-color: #FFFFFF;
     padding: 50px;
@@ -42,7 +41,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
     width: 1200px !important;
 
 }
-`, "",{"version":3,"sources":["webpack://./frontend/assets/css/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oEAAoE;IACpE,4DAA4D;IAC5D,SAAS;IACT,8BAA8B;AAClC;;AAEA;IACI,4BAA4B;IAC5B,kBAAkB;IAClB,8BAA8B;IAC9B,yBAAyB;IACzB,aAAa;IACb,mBAAmB;IACnB,wCAAwC;IACxC,4BAA4B;IAC5B,8BAA8B;IAC9B,wBAAwB;;AAE5B","sourcesContent":["body {\r\n    height: 100vh;\r\n    background: -webkit-linear-gradient(170deg, #505590,#4a86c9,#2fbbfa);\r\n    background: linear-gradient(170deg, #505590,#4a86c9,#2fbbfa);\r\n    margin: 0;\r\n    font-family: Arial, sans-serif;\r\n}\r\n\r\n.container-section {\r\n    margin-top: 120px !important;\r\n    text-align: center;\r\n    /* background-color: #343957;*/\r\n    background-color: #FFFFFF;\r\n    padding: 50px;\r\n    border-radius: 10px;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    min-height: 500px !important;\r\n    max-height: 50000px !important;\r\n    width: 1200px !important;\r\n\r\n}\r\n"],"sourceRoot":""}]);
+
+input{
+    margin-top: 5px !important;
+    margin-bottom: 15px !important;
+}
+`, "",{"version":3,"sources":["webpack://./frontend/assets/css/style.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oEAAoE;IACpE,4DAA4D;IAC5D,SAAS;IACT,8BAA8B;AAClC;;AAEA;IACI,4BAA4B;IAC5B,8BAA8B;IAC9B,yBAAyB;IACzB,aAAa;IACb,mBAAmB;IACnB,wCAAwC;IACxC,4BAA4B;IAC5B,8BAA8B;IAC9B,wBAAwB;;AAE5B;;AAEA;IACI,0BAA0B;IAC1B,8BAA8B;AAClC","sourcesContent":["body {\r\n    height: 100vh;\r\n    background: -webkit-linear-gradient(170deg, #505590,#4a86c9,#2fbbfa);\r\n    background: linear-gradient(170deg, #505590,#4a86c9,#2fbbfa);\r\n    margin: 0;\r\n    font-family: Arial, sans-serif;\r\n}\r\n\r\n.container-section {\r\n    margin-top: 120px !important;\r\n    /* background-color: #343957;*/\r\n    background-color: #FFFFFF;\r\n    padding: 50px;\r\n    border-radius: 10px;\r\n    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n    min-height: 500px !important;\r\n    max-height: 50000px !important;\r\n    width: 1200px !important;\r\n\r\n}\r\n\r\ninput{\r\n    margin-top: 5px !important;\r\n    margin-bottom: 15px !important;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -8,7 +8,6 @@ body {
 
 .container-section {
     margin-top: 120px !important;
-    text-align: center;
     /* background-color: #343957;*/
     background-color: #FFFFFF;
     padding: 50px;
@@ -18,4 +17,9 @@ body {
     max-height: 50000px !important;
     width: 1200px !important;
 
+}
+
+input{
+    margin-top: 5px !important;
+    margin-bottom: 15px !important;
 }

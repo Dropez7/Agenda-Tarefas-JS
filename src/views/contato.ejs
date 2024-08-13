@@ -17,11 +17,10 @@
         <div class="row mt-5 text-left justify-content-center">
             <div class="col-lg-6">
 
-                <!-- Se há um id, ou seja, se essa é uma tela de edição -->
                 <% if(!contato._id) { %> 
-                    <form action="/contato/register" method="POST">
+                    <form action="/contato/register" method="POST" id="formContato">
                 <% } else { %>
-                    <form action="/contato/edit/<%= contato._id %>" method="POST">
+                    <form action="/contato/edit/<%= contato._id %>" method="POST" id="formContato">
                 <% } %>
 
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
@@ -29,17 +28,18 @@
                     <div class="form-group">
 
                         <label for="nome text-left">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" value="<%= contato.nome %>" required >
-
+                        <input type="text" class="form-control" id="nomeContato" name="nome" value="<%= contato.nome %>" required >
+                        <span><small class="text-danger" id="erroNomeContato"> </small></span>
                         <label for="sobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="<%= contato.sobrenome %>">
-
+                        <input type="text" class="form-control" id="sobrenomeContato" name="sobrenome" value="<%= contato.sobrenome %>">
+                        <span><small class="text-danger" id="erroSobrenomeContato"> </small></span>
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<%= contato.email %>">
+                        <input type="email" class="form-control" id="emailContato" name="email" value="<%= contato.email %>">
+                        <span><small class="text-danger" id="erroEmailContato"> </small></span>
 
                         <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone" value="<%= contato.telefone %>">
-
+                        <input type="text" class="form-control" id="telefoneContato" name="telefone" value="<%= contato.telefone %>">
+                        <span><small class="text-danger" id="erroTelefoneContato"> </small></span>
                     </div>
                     <button type="submit" class="btn btn-primary mt-4">Salvar</button>
                 </form>

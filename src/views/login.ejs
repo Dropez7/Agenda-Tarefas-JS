@@ -12,51 +12,49 @@
                 <%- include("includes/messages") %>
             </div>
         </div>
-        <!-- 
-        <div class="row my-2">
-            <div class="col">
-                <div class="alert alert-danger">Um erro ai</div>
-            </div>
-        </div> -->
 
         <div class="row mt-5 text-left">
             <div class="col-lg-6">
                 <h4>Faça seu Cadastro</h4>
 
 
-                <form action="/login/register" method="POST">
+                <form action="/login/register" method="POST" id="formCadastro">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
                     <div class="form-group">
 
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="emailCadastro" name="email" required>
+                        <span><small id="erroEmailCadastro" class="text-danger"></small></span><br>
 
                         <label for="password">Sua Senha</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <input type="password" class="form-control" id="passwordCadastro" name="password" required>
+                        <span><small id="erroPasswordCadastro" class="text-danger"></small></span>
 
                     </div>
-                    <button type="submit" class="btn btn-primary mt-4">Cadastrar</button>
+                    <button type="submit" class="btn btn-primary mt-4" id="cadastrar">Cadastrar</button>
                 </form>
 
             </div>
 
             <div class="col-lg-6">
                 <h4>Fazer Login</h4>
-                <form action="/login/login" method="POST">
+                <form action="/login/login" method="POST" id="formLogin">
 
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
                     <div class="form-group">
 
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="emailLogin" name="email" required>
+                        <span><small id="erroEmailLogin" class="text-danger"></small></span><br>
 
                         <label for="password">Sua Senha</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <input type="password" class="form-control" id="passwordLogin" name="password" required>
+                        <span><small id="erroPasswordLogin" class="text-danger"></small></span>
 
                     </div>
-                    <button type="submit" class="btn btn-primary mt-4">Entrar</button>
+                    <button type="submit" class="btn btn-primary mt-4" id="entrar">Entrar</button>
                 </form>
             </div>
         </div>

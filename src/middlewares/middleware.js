@@ -1,8 +1,7 @@
 exports.middlewareGlobal = (req, res, next) => {
-    res.locals.errors = req.flash("errors"); // Vejo se tem algum erro nas flash
-    res.locals.success = req.flash("success"); // Vejo se tem algum sucesso nas flash
-    res.locals.user = req.session.user; // Vejo se tem algum usuário na sessão
-    next();
+    res.locals.errors = req.flash("errors");
+    res.locals.success = req.flash("success");
+    res.locals.user = req.session.user;
 };
 
 exports.checkCsrtError = (err, req, res, next) => {
@@ -20,7 +19,7 @@ exports.csrfMiddleware = (req, res, next) => {
 exports.loginRequired = (req, res, next) => {
     if (!req.session.user) {
         req.flash("errors", "Você precisa fazer login.");
-        req.session.save(() => res.redirect("/")); // Salvo a sessão, pois o redirect é assíncrono e ele não espera a sessão ser salva
+        req.session.save(() => res.redirect("/"));
         return;
     }
     next();

@@ -27,30 +27,6 @@ const sessionsOptions = session({
 
 const flash = require("connect-flash");
 
-// const helmet = require("helmet");
-// app.use(helmet()); 
-
-// Como dito no curso, o helmet tava me dando problema, vi que poderia configurar da seguinte forma:
-
-// const helmet = require('helmet');
-
-// app.use(helmet({
-//   contentSecurityPolicy: {
-//     directives: {
-//       defaultSrc: ["'self'"],
-//       scriptSrc: ["'self'", "https://code.jquery.com", "https://cdn.jsdelivr.net"],
-//       styleSrc: ["'self'", "https://cdn.jsdelivr.net"],
-//       // Outras diretivas podem ser ajustadas aqui conforme necessário
-//     },
-//   },
-//   // Outros ajustes de segurança
-// }));
-
-// mas era mt trampo e como todos os dados aqui são ficticios, preferi deixar sem, mais por simplicidade 
-
-
-
-
 const csrf = require("csurf");
 
 const path = require("path");

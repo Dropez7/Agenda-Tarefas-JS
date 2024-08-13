@@ -1,25 +1,63 @@
 body {
-    height: 100vh;
-    background: -webkit-linear-gradient(170deg, #505590,#4a86c9,#2fbbfa);
-    background: linear-gradient(170deg, #505590,#4a86c9,#2fbbfa);
+    
+    min-height: 100vh;
+    max-height: 200vh;
+    background: -webkit-linear-gradient(170deg, #505590, #4a86c9, #2fbbfa);
+    background: linear-gradient(170deg, #505590, #4a86c9, #2fbbfa);
     margin: 0;
+    padding-bottom: 20px;
     font-family: Arial, sans-serif;
 }
 
 .container-section {
     margin-top: 120px !important;
-    /* background-color: #343957;*/
     background-color: #FFFFFF;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 500px !important;
-    max-height: 50000px !important;
-    width: 1200px !important;
-
+    width: 100%;
+    max-width: 1200px;
 }
 
-input{
+input {
     margin-top: 5px !important;
     margin-bottom: 15px !important;
+}
+
+.table-responsive {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.table thead {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn-outline-primary {
+    border-color: #4a86c9;
+    color: #4a86c9;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4a86c9;
+    color: #fff;
+}
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.mensagem{
+    text-align: center !important;
 }

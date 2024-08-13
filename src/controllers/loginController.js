@@ -14,16 +14,16 @@ exports.register = async (req, res) => {
         await login.register();
 
         if (login.errors.length > 0) {
-            req.flash("errors", login.errors); // Coloco nossos erros dentro do flash message
-            req.session.save(function () { // salvei na sessao
-                res.redirect("back"); // Volta pra onde estava
+            req.flash("errors", login.errors); 
+            req.session.save(function () { 
+                res.redirect("back");
             });
 
             return;
         }
-        req.flash("success", "Usuário criado com sucesso"); // Coloco nossos sucessos dentro do flash message
-        req.session.save(function () { // salvei na sessao
-            res.redirect("back"); // Volta pra onde estava
+        req.flash("success", "Usuário criado com sucesso"); 
+        req.session.save(function () {
+            res.redirect("back"); 
         });
     } catch (e) {
         console.log(e);
